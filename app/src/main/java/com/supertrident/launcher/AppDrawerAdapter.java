@@ -73,6 +73,7 @@ public class AppDrawerAdapter extends RecyclerView.Adapter<AppDrawerAdapter.View
             app.icon = ri.activityInfo.loadIcon(pm);
             appsList.add(app);
         }
+
         Collections.sort(appsList, new Comparator<AppInfo>() {
             @Override
             public int compare(AppInfo o1, AppInfo o2) {

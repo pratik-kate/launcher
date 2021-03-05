@@ -7,16 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 
 public class HomeScreen extends Fragment implements View.OnLongClickListener {
 
     ImageView imageViewDrawer;
+    TextView hr,min;
     public HomeScreen() {
     }
 
@@ -36,6 +41,11 @@ public class HomeScreen extends Fragment implements View.OnLongClickListener {
                 return false;
             }
         });
+
+        hr = view.findViewById(R.id.hr);
+        min = view.findViewById(R.id.min);
+
+
         return view;
     }
 
