@@ -36,11 +36,14 @@ public class HomeScreen extends Fragment implements View.OnLongClickListener {
                 return false;
             }
         });
-
         return view;
     }
 
-
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode) {
+        super.startActivityForResult(intent, requestCode);
+        
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
