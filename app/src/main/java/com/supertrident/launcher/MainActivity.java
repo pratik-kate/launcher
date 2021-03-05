@@ -6,19 +6,28 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager2 viewPager;
+    private VerticalViewPager viewPager;
+    private androidx.viewpager.widget.PagerAdapter pagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        // loadFragment(new HomeScreen());
 
+        List<Fragment> list = new ArrayList<>();
+        list.add(new HomeScreen());
+        list.add(new AppDrawer());
+
         viewPager = findViewById(R.id.myviewpager);
-        PagerAdapter myadapter = new PagerAdapter(getSupportFragmentManager());
-        
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(),list);
+        viewPager.setAdapter(pagerAdapter);
 
     }
 
